@@ -63,7 +63,7 @@ class Person
         return $this->id;
     }
 
-    public function isWanted(): ?bool
+    public function getIsWanted(): ?bool
     {
         return $this->isWanted;
     }

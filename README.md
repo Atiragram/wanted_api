@@ -24,14 +24,14 @@ docker-compose up -d --build
 docker-compose exec php composer install
 ```
 
-### Create database
+### Create database (or import Wanted_persons.sql)
 ```bash
 docker-compose exec php bin/console doctrine:migrations:migrate
 ```
 
 ### Load fixtures
 ```bash
-docker-compose exec php bin/console doctrine:fixtures:load
+docker-compose exec php bin/console doctrine:fixtures:load --env=dev
 ```
 
 ## Api usage
@@ -40,3 +40,9 @@ docker-compose exec php bin/console doctrine:fixtures:load
 3. Get JWT token for the user on the `/api/login_check` endpoint with `username` and `password`.
 4. Pass the token to the Authorize section in "Bearer ***your token***" format.
 5. Use any endpoint
+
+### How to use API with Postman
+![Search](api_with_postman.gif)
+
+### How to use API with UI (http://127.0.0.1/api/doc)
+![Search](api_with_ui.gif)
