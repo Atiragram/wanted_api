@@ -1,0 +1,6 @@
+persons:
+  resource: App\Controller\PersonController
+
+api_login_check:
+  path: /login_check
+  methods: POST
