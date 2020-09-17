@@ -4,9 +4,8 @@
 
 Create .env based on the .env.dist.
 
-Generate SSH keys by running these commands:
+Generate SSH keys by running these commands (Remember the passphrase you use for keys generation and past it to your .env file to the `JWT_PASSPHRASE` variable):
 
-Remember the passphrase you use for keys generation and past it to your .env file to the `JWT_PASSPHRASE` variable.
 ```bash
 mkdir -p config/jwt
 openssl genpkey -out config/jwt/private.pem -aes256 -algorithm rsa -pkeyopt rsa_keygen_bits:4096
