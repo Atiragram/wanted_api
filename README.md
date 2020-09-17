@@ -19,9 +19,9 @@ Add a value for `NGINX_PUBLIC_PORT` variable for the next step.
 docker-compose up -d --build
 ```
 
-### To run symfony commands use
+### Install dependencies
 ```bash
-docker-compose exec php bin/console
+docker-compose exec php composer install
 ```
 
 ### Create database
