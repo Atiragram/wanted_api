@@ -27,26 +27,19 @@ class Person
      *
      * @JMS\Groups({"search"})
      */
-    private $id;
+    private ?int $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(name="full_name", type="string", length=255)
      *
      * @JMS\Groups({"search"})
      */
-    private $firstname;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     *
-     * @JMS\Groups({"search"})
-     */
-    private $lastname;
+    private string $fullName;
 
     /**
      * @ORM\Column(name="is_wanted", type="boolean")
      */
-    private $isWanted = false;
+    private bool $isWanted = false;
 
     /**
      * @ORM\Column(name="date_of_birth", type="date", nullable=true)
@@ -68,30 +61,6 @@ class Person
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getFirstName(): ?string
-    {
-        return $this->firstname;
-    }
-
-    public function setFirstName(string $first_name): self
-    {
-        $this->firstname = $first_name;
-
-        return $this;
-    }
-
-    public function getLastname(): ?string
-    {
-        return $this->lastname;
-    }
-
-    public function setLastname(string $lastname): self
-    {
-        $this->lastname = $lastname;
-
-        return $this;
     }
 
     public function isWanted(): ?bool
@@ -117,4 +86,15 @@ class Person
 
         return $this;
     }
+
+    public function getFullName(): string
+    {
+        return $this->fullName;
+    }
+
+    public function setFullName(string $fullName): void
+    {
+        $this->fullName = $fullName;
+    }
+
 }

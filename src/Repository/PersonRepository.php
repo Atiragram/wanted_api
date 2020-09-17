@@ -35,7 +35,7 @@ class PersonRepository extends ServiceEntityRepository
         ];
 
         return $qb
-            ->andHaving($qb->expr()->like('CONCAT(person.firstname, \' \', person.lastname)', ':fullName'))
+            ->andHaving($qb->expr()->like('person.fullName', ':fullName'))
             ->andWhere('person.isWanted = :isWanted')
             ->setParameters($queryParameters)
             ->orderBy('person.id', 'ASC')

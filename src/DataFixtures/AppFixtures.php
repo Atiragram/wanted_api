@@ -23,8 +23,7 @@ class AppFixtures extends Fixture
     {
         for ($i = 0; $i < 20; $i++) {
             $person = new Person();
-            $person->setFirstName('FirstName' . $i);
-            $person->setLastname('Lastname' . $i);
+            $person->setFullName('FirstName Lastname' . $i);
             $person->setIsWanted((bool) \rand(0, 1));
 
             $manager->persist($person);
