@@ -13,6 +13,9 @@ use JMS\Serializer\Annotation as JMS;
  *     schema="Wanted",
  *     name="persons",
  *     options={"comment"="A person."},
+ *     indexes={
+ *          @ORM\Index(name="fullName_search_idx", columns={"full_name"})
+ *     }
  * )
  *
  * @ORM\Entity(repositoryClass=PersonRepository::class)
